@@ -1,0 +1,82 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Berrien Springs SDA Church Locator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="pmc.html" />
+	
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/pmc.css">
+	
+	<script id="panel-init">
+	$(function() {
+	    $( "[data-role='navbar']" ).navbar();
+	    $( "[data-role='header'], [data-role='footer']" ).toolbar();
+	});
+	// Update the contents of the toolbars
+	$( document ).on( "pageshow", "[data-role='page']", function() {
+	    // Each of the four pages in this demo has a data-title attribute
+	    // which value is equal to the text of the nav button
+	    // For example, on first page: <div data-role="page" data-title="Info">
+	    var current = $( this ).jqmData( "title" );
+	    // Change the heading
+	    $( "[data-role='header'] h1" ).text( current );
+	    // Remove active class from nav buttons
+	    $( "[data-role='navbar'] a.ui-btn-active" ).removeClass( "ui-btn-active" );
+	    // Add active class to current nav button
+	    $( "[data-role='navbar'] a" ).each(function() {
+	        if ( $( this ).text() === current ) {
+	            $( this ).addClass( "ui-btn-active" );
+	        }
+	    });
+	});
+	</script>
+	<style>
+	
+	</style>
+</head>
+<body>
+	<div data-role="page" >
+		<div data-role="header" data-theme="b" >
+			
+			<img class="logo" src="images/church4.png">
+			<h1 class="church"><a>Church Finder</a></h1>
+			
+			
+		</div><!-- end header -->
+			
+			<div role="main"  class="ui-content">
+				<ul data-role="listview" data-inset="true" data-theme="a">
+					<li><a href="pmc.html" rel="external">PMC</a></li>
+					<li><a href="#">Spanish SDA Church</a></li>
+					<li><a href="#">ONE Place</a></li>
+					<li><a href="#">New Life</a></li>
+					<li><a href="#">Village Church</a></li>
+				</ul>
+			
+			</div><!-- end main -->
+	
+			<div data-role="footer" data-position="fixed" data-theme="b">
+				<div data-role="navbar" data-position="fixed">
+					<ul>
+						<li><a href="index.html" data-icon="home" data-iconpos="right">Home</a></li>
+						<li><a href="#" data-icon="info">About SDA</a></li>
+					</ul>
+				</div><!--end navbar-->
+			</div><!-- end footer -->
+		
+			
+	</div><!-- end page -->
+
+	
+	
+			
+</body>
+		
+</html>
+		
